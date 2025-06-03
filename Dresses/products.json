@@ -1,0 +1,28 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Solid Tube Sleeveless Fit & Flare Mini Dress",
+      "price": 275,
+      "image": "Sleeveless-Fit.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Casual Regular Sleeves Crepe",
+      "price": 299,
+      "image": "Casual-Regular-Sleeves-Crepe.png"
+    },
+    {
+      "id": 3,
+      "name": "Sheath Maroon Above Knee/Mid Thigh",
+      "price": 269,
+      "image": "Mid-Thigh.png"
+    },
+        {
+      "id": 4,
+      "name": "Dark Blue Maxi/Full Length",
+      "price": 300,
+      "image": "Dark-Blue-Maxi-Full-Length.png"
+    }
+  ]
+}
