@@ -1,0 +1,54 @@
+.category {
+  border: 1px solid #ccc;
+  background: white;
+  padding: 15px;
+  margin: 20px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.preview {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.preview img {
+  width: 80px;
+  height: auto;
+  border-radius: 5px;
+}
+
+.view-btn {
+  display: inline-block;
+  padding: 5px 15px;
+  background: #007bff;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.channel-btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.channel-btn:hover {
+  background-color: #218838;
+}
+
+#collab {
+  background: #f0f0f0;
+  padding: 20px;
+  margin: 40px 10px;
+  border-radius: 10px;
+}
