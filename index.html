@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Outfit Store - Home</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Welcome to Our Outfit Catalog</h1>
+
+  <div id="categories"></div>
+
+  <hr />
+<div id="collab">
+  <h2>Partner With Us</h2>
+  <p>We invite resellers and channel partners to collaborate with us.</p>
+  <ul>
+    <li>📈 High margin products</li>
+    <li>📦 Fast stock delivery</li>
+    <li>🎯 Marketing support</li>
+    <li>📧 <a href="mailto:partner@outfitstore.com">partner@outfitstore.com</a></li>
+  </ul>
+  <a href="channel-partner.html" class="channel-btn">Become a Channel Partner</a>
+</div>
+
+  <script>
+    const categories = [
+      { name: 'Blouses', file: 'blouses/products.json', page: 'blouses/', folder: 'blouses/images' },
+      { name: 'Skirts', file: 'skirts/products.json', page: 'skirts/', folder: 'skirts/images' },
+      { name: 'Tops', file: 'tops/products.json', page: 'tops/', folder: 'tops/images' },
+      { name: 'Dresses', file: 'dresses/products.json', page: 'dresses/', folder: 'dresses/images' }
+    ];
+
+    const container = document.getElementById('categories');
+
+    categories.forEach(cat => {
+      fetch(cat.file)
+        .then(res => res.json())
+        .then(data => {
+          const preview = data.products.slice(0, 3);
+          const div = document.createElement('div');
+          div.className = 'category';
+          div.innerHTML = `
+            <h2>${cat.name}</h2>
+            <div class="preview">
+              ${preview.map(p => `<img src="${cat.folder}/${p.image}" alt="${p.name}">`).join('')}
+            </div>
+            <a class="view-btn" href="${cat.page}">View ${cat.name}</a>
+          `;
+          container.appendChild(div);
+        });
+    });
+  </script>
+</body>
+</html>
