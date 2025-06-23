@@ -1,80 +1,378 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Become a Channel Partner</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Become a Channel Partner | Elegance Fashion</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
+    :root {
+      --primary-color: #2c3e50;
+      --secondary-color: #007acc;
+      --accent-color: #e74c3c;
+      --light-bg: #f9f9f9;
+      --creator-color: #9b59b6;
+      --maker-color: #27ae60;
+    }
+    
     body {
-      font-family: Arial, sans-serif;
-      margin: 2rem;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
       line-height: 1.6;
+      color: #333;
     }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    
+    header {
+      background: linear-gradient(135deg, var(--primary-color), #34495e);
+      color: white;
+      padding: 3rem 0;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    
     h1, h2, h3 {
-      color: #2c3e50;
+      color: var(--primary-color);
     }
+    
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    h2 {
+      font-size: 1.8rem;
+      margin-top: 3rem;
+      border-bottom: 2px solid var(--secondary-color);
+      padding-bottom: 0.5rem;
+    }
+    
+    h3 {
+      font-size: 1.4rem;
+    }
+    
     ul {
       padding-left: 1.5rem;
     }
+    
+    li {
+      margin-bottom: 0.8rem;
+    }
+    
     a {
-      color: #007acc;
+      color: var(--secondary-color);
       text-decoration: none;
+      transition: color 0.3s;
+    }
+    
+    a:hover {
+      color: var(--accent-color);
+    }
+    
+    .highlight-box {
+      background-color: var(--light-bg);
+      border-left: 4px solid var(--secondary-color);
+      padding: 1.5rem;
+      margin: 2rem 0;
+      border-radius: 0 4px 4px 0;
+    }
+    
+    .plans-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+    
+    .plan-card {
+      background-color: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .plan-card.reseller {
+      border-top: 4px solid var(--secondary-color);
+    }
+    
+    .plan-card.creator {
+      border-top: 4px solid var(--creator-color);
+    }
+    
+    .plan-card.maker {
+      border-top: 4px solid var(--maker-color);
+    }
+    
+    .plan-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    
+    .plan-card h3 {
+      margin-top: 0;
+    }
+    
+    .plan-card .icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    
+    .reseller .icon {
+      color: var(--secondary-color);
+    }
+    
+    .creator .icon {
+      color: var(--creator-color);
+    }
+    
+    .maker .icon {
+      color: var(--maker-color);
+    }
+    
+    .plan-card .badge {
+      position: absolute;
+      top: 0;
+      right: 0;
+      background: var(--primary-color);
+      color: white;
+      padding: 0.3rem 0.8rem;
+      font-size: 0.8rem;
+      border-radius: 0 0 0 8px;
+    }
+    
+    .cta-section {
+      text-align: center;
+      margin: 3rem 0;
+      padding: 2.5rem;
+      background: linear-gradient(135deg, var(--primary-color), #34495e);
+      color: white;
+      border-radius: 8px;
+    }
+    
+    .cta-section h2 {
+      color: white;
+      border-bottom: none;
+    }
+    
+    .cta-button {
+      display: inline-block;
+      background-color: var(--accent-color);
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 1rem;
+      transition: all 0.3s;
+      border: 2px solid transparent;
+    }
+    
+    .cta-button:hover {
+      background-color: transparent;
+      border-color: white;
+      color: white;
+    }
+    
+    .back-link {
+      display: inline-block;
+      margin-top: 2rem;
+      font-weight: bold;
+    }
+    
+    .plan-type-header {
+      text-align: center;
+      margin: 4rem 0 2rem;
+      position: relative;
+    }
+    
+    .plan-type-header h2 {
+      display: inline-block;
+      background-color: white;
+      padding: 0 2rem;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .plan-type-header::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background-color: #ddd;
+      z-index: 0;
+    }
+    
+    @media (max-width: 768px) {
+      .container {
+        padding: 1rem;
+      }
+      
+      h1 {
+        font-size: 2rem;
+      }
+      
+      .cta-section {
+        padding: 1.5rem;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>Become a Channel Partner</h1>
+  <header>
+    <div class="container">
+      <h1 style="color:white;">Collaboration Opportunities</h1>
+      <p>Join Elegance Fashion's network of resellers, designers, and manufacturers</p>
+    </div>
+  </header>
 
-  <p>Welcome to Elegance Fashion — your gateway to flexible, growth-focused fashion collaboration. We're based in Surat, Gujarat, the textile hub of India, and we're building a pan-India network of individuals passionate about fashion, styling, and entrepreneurship.</p>
+  <div class="container">
+    <div class="highlight-box">
+      <p>Welcome to Elegance Fashion — your gateway to flexible, growth-focused fashion collaboration. Based in Surat, Gujarat (India's textile hub), we offer multiple partnership models for resellers, individual dressmakers, and manufacturers.</p>
+    </div>
 
-  <h2>Our Collaboration Plans</h2>
-  <ul>
-    <li><strong>Plan 1: Resale Collaboration</strong><br/>
-      Share our outfits with your network. You set your profit margin and delivery charges — we take care of supply and logistics.</li>
-    <li><strong>Plan 2: On-Demand Sourcing</strong><br/>
-      Have someone looking for a specific outfit? We’ll help you source it. You quote the final price including your profit.</li>
-    <li><strong>Plan 3: Team Management</strong><br/>
-      Onboard and manage a team of collaborators. Guide others working under Plan 1 and 2 while growing your influence and earnings.</li>
-    <li><strong>Plan X: Personal Branding & Content</strong><br/>
-      Optional plan for those who want to use their own image to promote outfits via social media. This plan pairs well with team management (Plan 3).</li>
-  </ul>
+    <div class="plan-type-header">
+      <h2>For Resellers & Entrepreneurs</h2>
+    </div>
+    
+    <div class="plans-container">
+      <div class="plan-card reseller">
+        <div class="icon"><i class="fas fa-exchange-alt"></i></div>
+        <h3>Plan 1: Resale Collaboration</h3>
+        <p>Share our outfits with your network. Set your own profit margin and delivery charges while we handle supply and logistics.</p>
+        <div class="badge">Best Seller</div>
+      </div>
+      
+      <div class="plan-card reseller">
+        <div class="icon"><i class="fas fa-search"></i></div>
+        <h3>Plan 2: On-Demand Sourcing</h3>
+        <p>Have clients looking for specific outfits? We'll help you source them. You quote the final price including your profit.</p>
+      </div>
+      
+      <div class="plan-card reseller">
+        <div class="icon"><i class="fas fa-users"></i></div>
+        <h3>Plan 3: Team Management</h3>
+        <p>Build and manage your own team of collaborators. Earn while helping others grow their fashion business.</p>
+      </div>
+      
+      <div class="plan-card reseller">
+        <div class="icon"><i class="fas fa-star"></i></div>
+        <h3>Plan 3: Personal Branding</h3>
+        <p>Use your personal brand to promote outfits via social media. Ideal for influencers and content creators.</p>
+      </div>
+    </div>
 
-  <h2>Why Join Us?</h2>
-  <ul>
-    <li>Zero investment, full flexibility</li>
-    <li>Work from anywhere, at your own pace</li>
-    <li>No fixed script — you build your strategy</li>
-    <li>Access to exclusive collections not available online</li>
-    <li>Opportunities to earn, lead, and build your personal brand</li>
-  </ul>
+    <div class="plan-type-header">
+      <h2>For Individual Dressmakers</h2>
+    </div>
+    
+    <div class="plans-container">
+      <div class="plan-card creator">
+        <div class="icon"><i class="fas fa-cut"></i></div>
+        <h3>Designer Partnership</h3>
+        <p>Showcase and sell your custom designs through our network. We handle marketing and sales while you focus on creation.</p>
+        <ul>
+          <li>Keep 70-80% of profits</li>
+          <!-- <li>Access to premium fabrics</li> -->
+          <li>Quality control support (Under concideration)</li>
+        </ul>
+      </div>
+      
+      <div class="plan-card creator">
+        <div class="icon"><i class="fas fa-palette"></i></div>
+        <h3>Custom Order Program</h3>
+        <p>Receive tailored orders from our clients with your craftsmanship.</p>
+        <ul>
+          <li>Decide your own price</li>
+          <!-- <li>Materials provided</li> -->
+          <li>Flexible workload</li>
+        </ul>
+      </div>
+      
+      <div class="plan-card creator">
+        <div class="icon"><i class="fas fa-graduation-cap"></i></div>
+        <h3>Mentorship Program</h3>
+        <p>Teach your techniques to others while earning.</p>
+        <ul>
+          <li>Conduct workshops</li>
+          <li>Create tutorial content</li>
+          <li>Build your reputation</li>
+        </ul>
+      </div>
+    </div>
 
-  <h2>Still wondering if this is just reselling?</h2>
-  <p>We understand — on the surface, it might feel like simple reselling. But our model is much more:</p>
-  <ul>
-    <li>You’re free to pitch your own ideas and strategies</li>
-    <li>You set your margins and choose what to promote</li>
-    <li>You can manage your own team or even run your own campaign</li>
-  </ul>
-  <p>In short, this is a collaboration — not a fixed job. You grow with us, at your own pace, your own way.</p>
+    <div class="plan-type-header">
+      <h2>For Manufacturers</h2>
+    </div>
+    
+    <div class="plans-container">
+      <div class="plan-card maker">
+        <div class="icon"><i class="fas fa-industry"></i></div>
+        <h3>MArketing Partnership</h3>
+        <p>List your products in our catalogue.</p>
+        <ul>
+          <li>Support from our large network of individual contributors </li>
+          <li>Large target audiance</li>
+          <!-- <li>Quality standards support</li> -->
+        </ul>
+      </div>
+      
+      <!-- <div class="plan-card maker">
+        <div class="icon"><i class="fas fa-boxes"></i></div>
+        <h3>Excess Capacity Program</h3>
+        <p>Utilize your idle production capacity effectively.</p>
+        <ul>
+          <li>Fill unused slots</li>
+          <li>No minimums required</li>
+          <li>Flexible scheduling</li>
+        </ul>
+      </div> -->
+      
+      <!-- <div class="plan-card maker">
+        <div class="icon"><i class="fas fa-tshirt"></i></div>
+        <h3>Private Label Program</h3>
+        <p>Manufacture for our private label collections.</p>
+        <ul>
+          <li>Long-term contracts</li>
+          <li>Technical support</li>
+          <li>Volume discounts</li>
+        </ul>
+      </div> -->
+    </div>
 
-  <h2>How to Get Started</h2>
-  <p>If you’re interested, email us at <a href="mailto:elegance.ahmedabad@gmail.com">our email</a> or message us on Reddit/Gmail to get started. We’ll walk you through a few quick questions to understand how we can best collaborate with you.</p>
+    <div class="highlight-box">
+      <h3>Why Collaborate With Us?</h3>
+      <ul>
+        <li><strong>For Resellers:</strong> No inventory risk, flexible earning potential, marketing support</li>
+        <li><strong>For Designers:</strong> Focus on creativity while we handle business operations</li>
+        <li><strong>For Manufacturers:</strong> Large network</li>
+      </ul>
+      <p>We provide the platform, tools, and support - you bring your unique skills and passion.</p>
+    </div>
 
-  <h2>Questions We May Ask</h2>
-  <ul>
-    <li>Where are you based?</li>
-    <li>What do you expect from this collaboration?</li>
-    <li>Have you done something similar before?</li>
-    <li>What platforms do you prefer to use?</li>
-    <li>Would you be interested in managing a team?</li>
-  </ul>
+    <div class="cta-section">
+      <h2>Ready to Start Your Fashion Journey?</h2>
+      <p>Whether you're a reseller, designer, or manufacturer, we have the perfect collaboration model for you.</p>
+      <a href="mailto:elegance.ahmedabad@gmail.com" class="cta-button">
+        <i class="fas fa-envelope"></i> Contact Us Now
+      </a>
+    </div>
 
-  <h2>Let’s Build Something Together</h2>
-  <p>This is your chance to turn fashion into income, influence, and a new kind of professional journey. We’re here to support you — whether you're starting small or dreaming big.</p>
-
-  <p><strong>Contact us:</strong> <a href="mailto:elegance.ahmedabad@gmail.com">elegance.ahmedabad@gmail.com</a></p>
-  <p><a href="index.html">&larr; Back to Home</a></p>
+    <p><strong>Email:</strong> <a href="mailto:elegance.ahmedabad@gmail.com">elegance.ahmedabad@gmail.com</a></p>
+    <!-- <p><strong>Phone:</strong> <a href="tel:+919999999999">+91 99999 99999</a></p> -->
+    
+    <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Home</a>
+  </div>
 </body>
 </html>
